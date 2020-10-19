@@ -43,3 +43,7 @@ jobs:
 
     - name: Build and push
       run: docker push mombe090/test:latest
+
+    - name: Run app
+      run: docker run -p 8080:8080 -d
+
