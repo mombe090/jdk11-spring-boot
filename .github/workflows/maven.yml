@@ -34,9 +34,8 @@ jobs:
 
 
 
-    - name: setup environment
-      uses: nelonoel/branch-name@v1.0.1
-      run: |
+    - uses: nelonoel/branch-name@v1.0.1
+    - run: |
           # Strip git ref prefix from version.
           echo ${BRANCH_NAME}
 
