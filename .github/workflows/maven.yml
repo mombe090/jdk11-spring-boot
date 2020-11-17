@@ -32,11 +32,14 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
+
+
     - name: setup environment
+    - uses: nelonoel/branch-name@v1.0.1
       run: |
           # Strip git ref prefix from version.
-          echo "${GITHUB_BRANCH##*/}" env: GITHUB_BRANCH: ${{ github.ref }}
-          echo ${{ env.BRANCH_NAME }}
+          echo ${BRANCH_NAME}
+
 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ${{ env.BRANCH_NAME }}
