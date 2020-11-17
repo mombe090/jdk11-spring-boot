@@ -33,7 +33,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: setup environment
-        run: |
+      run: |
           # Strip git ref prefix from version.
           echo "${GITHUB_BRANCH##*/}" env: GITHUB_BRANCH: ${{ github.ref }}
           echo ${{ env.BRANCH_NAME }}
