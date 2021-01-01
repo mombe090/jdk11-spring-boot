@@ -6,7 +6,7 @@ jdk:
 
 sudo: true 
 
-script: "mvn clean install"
+script: "sudo mvn clean install"
 
 after_success:
   - bash <(ls target)
